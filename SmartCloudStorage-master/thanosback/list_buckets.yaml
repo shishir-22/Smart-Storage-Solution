@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: Simple PUT operation
+    local_action:
+      module: aws_s3_bucket_info
+      aws_access_key: "{{access_key}}"
+      aws_secret_key: "{{secret_key}}"
+      register: result
+  - name: List buckets
+    debug:
+      msg: "{{ result['buckets'] }}"
+

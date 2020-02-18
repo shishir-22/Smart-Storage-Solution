@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+  <style>
+
+      body{
+        background-image: linear-gradient(to right, #1f4037,#99f2c8);
+        
+      }
+      
+        h1{
+          color: black;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          font-style: italic;
+          font-size: 70;
+        }
+        #add_site{
+          position: absolute;
+          left:80%;
+          top:20%;
+        }
+
+        #more{
+          background-color: white;
+          width: 100%;
+          height: 30%;
+          border: 2px solid black;
+          font-size: 200%;
+        }
+</style>
+</head>
+<body>
+    {% load filter_strings %}
+
+
+    <div class="row">
+        {% for item1 in url %}
+        <div class ="col-sm-6"><br><br>
+        <div class="card" style="width: 32rem;">
+          <div class="card-body back">
+            <h5 class="card-title">Url Information</h5>
+            <table class="table" id="table">
+              <tr>
+                <th scope="col">URL</th>
+                <td scope="col">{{ item1 }}</td>
+              </tr>
+              <tr>
+                 <th scope="row">STATUS</th>
+                 <td>{{ status|get_at_index:forloop.counter0 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">ACCESS</th>
+                <td>{{ access|get_at_index:forloop.counter0 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">SUBSCRIBER</th>
+                <td>{{ subscriber|get_at_index:forloop.counter0 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">CRON</th>
+                <td>{{ cron|get_at_index:forloop.counter0 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Current Response Time</th>
+                <td>{{ row|get_influx_responsetime:forloop.counter0 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Current Status Code</th>
+                <td>{{ row|get_influx_statuscode:forloop.counter0 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Show in detail</th>  
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#hello{{forloop.counter0}}">
+                      Open modal
+                    </button>
+                  </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        </div>
+        <br>
+        <!-- <div id="chartContainer1" style="height: 370px; width: 100%;"></div> -->
+        <!-- <div id="chartContainer2" style="height: 370px; width: 100%;"></div> -->
+        <!-- <div id="chartContainer3" style="height: 370px; width: 100%;"></div> -->
+          
+
+        
+
+            <!-- Button to Open the Modal -->
+            
+          
+            <!-- The Modal -->
+            <div class="modal bd-example-modal-xl" id="hello{{forloop.counter0}}">
+              <div class="modal-dialog modal-xl" >
+                <div class="modal-content">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">DATA REPRESENTATION</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body container" id="#body{{forloop.counter0}}">
+                    <br>
+            
+                  </div>
+                  
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                  
+                
+              </div>
+            </div>
+            
+          </div>
+
+
+
+          {% endfor %}
+        </div>
+
+                   <div id='add_site'>
+      <form action="/form/user/" method="POST">
+        {% csrf_token %}
+        <input type="hidden" value="{{id}}" name="value">
+        <button id="more" type="submit">Want to add more?</button>
+      </form>
+    </div>
+    <br>
+    <br>
+    <div id="logout">
+        <form action="/form/logout/" method="POST">
+          {% csrf_token %}
+            <button  type="submit" class="btn btn-primary btn-block btn-lg">LOGOUT</button>
+        </form>
+
+      </div>
+
+
+
+        <script>
+            // row|get_influx_statuscode:forloop.counter0
+               var response_time={{response_time|safe}};
+               var status_code={{status_code|safe}};
+               window.onload = function () {
+                   
+               for (i=0;i<response_time.length;i++){
+     
+                 div = document.createElement("div"); 
+                 div.id = "chartContainer"+(i+1).toString();
+                 div.style.height="370px";
+                 document.getElementById('#body'+(i).toString()).appendChild(div);  
+                 document.getElementById('#body'+(i).toString()).appendChild(document.createElement('br'));
+                 document.getElementById('#body'+(i).toString()).appendChild(document.createElement('br'));
+                 document.getElementById('#body'+(i).toString()).appendChild(document.createElement('br'));                
+                
+                 div = document.createElement("div"); 
+                 div.id = "statusContainer"+(i+1).toString();
+                 div.style.height="370px";
+                 document.getElementById('#body'+(i).toString()).appendChild(div);  
+                 document.getElementById('#body'+(i).toString()).appendChild(document.createElement('br'));
+                 document.getElementById('#body'+(i).toString()).appendChild(document.createElement('br'));
+                 document.getElementById('#body'+(i).toString()).appendChild(document.createElement('br'));
+                
+                 chart_print  = new CanvasJS.Chart("chartContainer"+(i+1).toString(), {
+                 animationEnabled: true,
+                 theme: "dark2",
+                 width:1100,
+                 title:{
+                   text: "Response Time"+(i+1).toString()
+                 },
+                 axisY:{
+                   includeZero: false
+                 },
+                 data: [{        
+                   type: "line",   
+                   lineThickness:5,    
+                   dataPoints: response_time[i]
+                 }]
+               });
+               chart_print.render();
+               
+               }
+     
+               for (i=0;i<status_code.length;i++){
+                
+                 chart_print  = new CanvasJS.Chart("statusContainer"+(i+1).toString(), {
+                 animationEnabled: true,
+                 theme: "dark2",
+                 width: 1100,
+
+                 title:{
+                   text: "Status Code"+(i+1).toString()
+                 },
+                 axisY:{
+                   includeZero: false
+                 },
+                 data: [{        
+                   type: "line",
+                   lineDashType:"solid", 
+                   lineThickness:20,
+                   lineColor:"yellow",      
+                   dataPoints: status_code[i]
+                 }]
+                 });
+                 chart_print.render();
+     
+                 }
+           }
+     
+     
+
+
+</script>
+ <script type(="text/javascript">
+      setTimeout(function(){
+        window.location.reload(1);
+      },2*60*1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - SCS</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <!-- <link rel="stylesheet" href=" https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i"> -->
+    <link rel="stylesheet" href="{% static 'fonts/simple-line-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/baguetteBox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="#">SCS</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <!-- <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/form/index.html">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/form/features.html">Features</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/form/about-us.html">About Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/form/contact-us.html">Contact Us</a></li>
+                </ul> -->
+            </div><a href="/form/login">Login</a></div>
+    </nav>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+            <div class="container"><a class="navbar-brand" href="#">Company Name</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">First Item</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#">Second Item</a></li>
+                        <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                        </li>
+                    </ul><span class="navbar-text actions"> <a class="login" href="form/login">Log In</a><a class="btn btn-light action-button" role="button" href="#">Sign Up</a></span></div>
+            </div>
+        </nav>
+    </div>
+    <main class="page landing-page">
+        <section class="clean-block clean-hero" style="background-image:url(&quot;{% static 'img/tech/image4.jpg' %}&quot;);color:rgba(9, 162, 255, 0.85);">
+            <div class="text">
+                <h2>Smart Cloud Storage</h2>
+                <p>Easy-to-use, secure and Highly available</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
+        </section>
+        <section class="bg-white clean-block clean-info dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Info</h2>
+                    <p>Store your data and access it on the go!</p>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6"><img class="img-thumbnail border-white" src="{% static 'img/pngtree-cloud-folder-storage-file-abstract-flat-color-icon-template-png-image_1656464.jpg' %}"></div>
+                    <div class="col-md-6">
+                        <h3>Sign-Up for a Smart Storage Solution today !&nbsp;&nbsp;</h3>
+                        <p>o Highly Durable</p>
+                        <p>o&nbsp;Highly Available</p>
+                        <p>o&nbsp;Highly Secure</p>
+                        <div class="getting-started-info"></div><button class="btn btn-outline-primary btn-lg" type="button">Join Now</button></div>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block features">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Features</h2>
+                    <p>Some main features include:</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 feature-box"><i class="icon-star icon"></i>
+                        <h4>Highly Available</h4>
+                        <p></p>
+                        <p>99.99 % data availability!</p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
+                        <h4>Add retention policies</h4>
+                        <p></p>
+                        <p>Remove files/ folders automatically using retention policies.</p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-screen-smartphone icon"></i>
+                        <h4>Responsive</h4>
+                        <p>Works from your phone as well!</p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i>
+                        <h4>All Browser Compatibility</h4>
+                        <p>Supports all browsers!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block slider dark"></section>
+        <section class="clean-block about-us">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">About Us</h2>
+                    <p></p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="{% static 'img/shishi.jpeg' %}">
+                            <div class="card-body info">
+                                <h4 class="card-title">Shishir Goyal</h4>
+                                <p class="card-text"></p>
+                                <div class="icons"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="{% static 'img/LRM_EXPORT_74354003346791_20190912_071431462.jpeg' %}">
+                            <div class="card-body info">
+                                <h4 class="card-title">Shivansh Thapliyal</h4>
+                                <p class="card-text"></p>
+                                <div class="icons"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="{% static 'img/sidosho.jpeg' %}">
+                            <div class="card-body info">
+                                <h4 class="card-title">Siddharth Sharma</h4>
+                                <p class="card-text"></p>
+                                <div class="icons"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2019 Copyright Smart Cloud Storage</p>
+        </div>
+    </footer>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script> -->
+    <script src="{% static 'js/script.min.js' %}"></script>
+</body>
+
+</html>

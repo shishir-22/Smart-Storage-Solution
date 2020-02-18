@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: Simple PUT operation
+    local_action:
+      module: aws_s3
+      aws_access_key: "{{access_key}}"
+      aws_secret_key: "{{secret_key}}"
+      bucket: "{{bucket_name}}"
+      object: "{{object_name}}" # can give path also of virtual directories
+      src: "{{file_name}}" # Path of file to be uploaded with name
+      mode: put
+      version: "{{version_name}}" #will work only if versioning is enabled

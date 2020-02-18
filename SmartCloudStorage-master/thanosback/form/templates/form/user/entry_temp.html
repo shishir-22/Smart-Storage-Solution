@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<title>Bootstrap Elegant Sign Up Form with Icons</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+
+body{
+    font-family: 'Exo', sans-serif;
+}
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    /*top:10px;*/
+
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background: #081e1a;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 10%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 85%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 05%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+</style> 
+<style type="text/css">
+	body {
+		color: #999;
+		background: #f5f5f5;
+		font-family: 'Roboto', sans-serif;
+	}
+	.form-control, .form-control:focus, .input-group-addon {
+		border-color: #e1e1e1;
+        border-radius: 0;
+	}
+	.signup-form {
+		width: 390px;
+		margin: 0 auto;
+		/*padding: 30px 0;*/
+		/*left: 50;
+		top: 50;*/
+		/*position: absolute;*/
+    	/*top:50vh;*/
+		/*position: absolute;*/
+		/*transform: translate(-50,-50); */
+	}
+	.signup-form h2 {
+		color: #636363;
+        margin: 0 0 15px;
+		text-align: center;
+
+    }
+    .signup-form .lead {
+        font-size: 14px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+    .signup-form form {		
+		border-radius: 1px;
+    	margin-bottom: 15px;
+        background: #fff;
+		border: 1px solid #f3f3f3;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+	.signup-form .form-group {
+		margin-bottom: 20px;
+	}
+	.signup-form label {
+		font-weight: normal;
+		font-size: 13px;
+	}
+	.signup-form .form-control {
+		min-height: 38px;
+		box-shadow: none !important;
+		border-width: 0 0 1px 0;
+	}	
+	.signup-form .input-group-addon {
+		max-width: 42px;
+		text-align: center;
+		background: none;
+		border-width: 0 0 1px 0;
+		padding-left: 5px;
+	}
+    .signup-form .btn {        
+        font-size: 16px;
+        font-weight: bold;
+		background: #19aa8d;
+        border-radius: 3px;
+		border: none;
+		min-width: 140px;
+        outline: none !important;
+    }
+	.signup-form .btn:hover, .signup-form .btn:focus {
+		background: #179b81;
+	}
+	.signup-form a {
+		color: #19aa8d;
+		text-decoration: none;
+	}	
+	.signup-form a:hover {
+		text-decoration: underline;
+	}
+	.signup-form .fa {
+		font-size: 21px;
+	}
+	.signup-form .fa-paper-plane {
+		font-size: 17px;
+	}
+	.signup-form .fa-check {
+		color: #fff;
+		left: 9px;
+		top: 18px;
+		font-size: 7px;
+		position: absolute;
+    }
+    body{
+        background-color: aliceblue;
+    }
+</style>
+</head>
+<body>
+<div class="context">
+<div class="signup-form">	
+    <form action="done/" method="post">
+        {% csrf_token %}
+		<h2>Create Infrastructure</h2>
+		<p class="lead">It's free and hardly takes more than 30 seconds.</p>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user"></i></span>
+				<input type="text" class="form-control" name="access" placeholder="Access" required="required">
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+				<input type="text" class="form-control" name="status" placeholder="Status" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+				<input type="url" class="form-control" name="url" placeholder="Url" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="fa fa-lock"></i>
+					<i class="fa fa-check"></i>
+				</span>
+				<input type="email" class="form-control" name="subscriber" placeholder=" Subscriber" required="required">
+			</div>
+        </div>  
+        <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-lock"></i>
+                        <i class="fa fa-check"></i>
+                    </span>
+                    <input type="number" class="form-control" name="cron" placeholder=" Cron" required="required" min=2 max=5>
+                </div>
+            </div>     
+        <input type="hidden" id="value" name="value" value= {{id}}  >   
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">CREATE</button>
+        </div>
+		<p class="small text-center">By clicking the CREATE button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
+	</form>
+	<div id="logout">
+		<form action="/form/logout/" method="POST">
+			{% csrf_token %}
+				<button  type="submit" class="btn btn-primary btn-block btn-lg">LOGOUT</button>
+		</form>
+		
+	</div>
+</div>
+</div>
+<div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+</body>
+</html>                            
+
+
+
+
+
+
+
+
+
+<!-- <form action="done/" method="POST">
+            {% csrf_token %}
+            <label for="access">access</label>
+            <input id="access" type="text" name="access"></input>
+
+            <label for="status">status</label>
+            <input type="text" id="status" name="status"></input>
+
+            <label for="subscriber">subscriber</label>
+            <input id="subscriber" type="text" name="subscriber"></input>
+
+            <label for="url">url</label>
+            <input type="text" id="url" name="url"></input>
+
+            <label for="cron">cron</label>
+            <input type="text" id="cron" name="cron"></input>
+
+            <button type="submit" value="submit">submit</button>
+        </form>-->

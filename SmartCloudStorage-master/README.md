@@ -1,0 +1,2 @@
+# SmartCloudStorage
+In this project, we make a web application which will enable users to store data over cloud in a secure, highly available way. The user can also apply data retention policies over certain files/folders. (Data will get deleted automatically when they provide the cron. Eg. Log files) The production of the same application is done using a complete CI/CD pipeline. Automatic build status mails will be generated and sent to the developers. The application is made on Django web framework, and AWS Lambda, S3, IAM policies and a database will be used..

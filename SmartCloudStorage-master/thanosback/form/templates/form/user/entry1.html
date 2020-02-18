@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<title>Create Infrastructure - WAMWAP</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<style type="text/css">
+	body{
+	width: 100wh;
+	height: 90vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #1ab394, #1ab394);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+#btn2, #btn1 {
+	
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #1ab394, #1ab394);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+h1,
+h6 {
+	font-family: 'Open Sans';
+	font-weight: 300;
+	text-align: center;
+	position: absolute;
+	top: 45%;
+	right: 0;
+	left: 0;
+}
+	.form-control, .form-control:focus, .input-group-addon {
+		border-color: #e1e1e1;
+        border-radius: 0;
+	}
+	.signup-form {
+		width: 390px;
+		margin: 0 auto;
+		padding: 10px 0;
+		/*top: 10px;*/
+	}
+	.signup-form h2 {
+		color: #636363;
+        margin: 0 0 15px;
+		text-align: center;
+    }
+    .signup-form .lead {
+        font-size: 14px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+    .signup-form form {		
+		border-radius: 1px;
+    	margin-bottom: 15px;
+        background: #fff;
+		border: 1px solid #f3f3f3;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+	.signup-form .form-group {
+		margin-bottom: 20px;
+	}
+	.signup-form label {
+		font-weight: normal;
+		font-size: 13px;
+	}
+	.signup-form .form-control {
+		min-height: 38px;
+		box-shadow: none !important;
+		border-width: 0 0 1px 0;
+	}	
+	.signup-form .input-group-addon {
+		max-width: 42px;
+		text-align: center;
+		background: none;
+		border-width: 0 0 1px 0;
+		padding-left: 5px;
+	}
+    .signup-form .btn {        
+        font-size: 16px;
+        font-weight: bold;
+		background: #19aa8d;
+        border-radius: 3px;
+		border: none;
+		min-width: 140px;
+        outline: none !important;
+    }
+	.signup-form .btn:hover, .signup-form .btn:focus {
+		background: #179b81;
+	}
+	.signup-form a {
+		color: #19aa8d;
+		text-decoration: none;
+	}	
+	.signup-form a:hover {
+		text-decoration: underline;
+	}
+	.signup-form .fa {
+		font-size: 21px;
+	}
+	.signup-form .fa-paper-plane {
+		font-size: 17px;
+	}
+	.signup-form .fa-check {
+		color: #fff;
+		left: 9px;
+		top: 18px;
+		font-size: 7px;
+		position: absolute;
+    }
+   
+</style>
+</head>
+<body>
+<div class="signup-form">	
+    <form action="done/" method="post">
+        {% csrf_token %}
+		<h2>Create Infrastructure</h2>
+		<p class="lead">It's free and hardly takes more than 30 seconds.</p>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user"></i></span>
+				<input type="text" class="form-control" name="access" placeholder="Access" required="required">
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+				<input type="text" class="form-control" name="status" placeholder="Status" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+				<input type="url" class="form-control" name="url" placeholder="Url" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="fa fa-lock"></i>
+					<i class="fa fa-check"></i>
+				</span>
+				<input type="email" class="form-control" name="subscriber" placeholder=" Subscriber" required="required">
+			</div>
+        </div>  
+        <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-lock"></i>
+                        <i class="fa fa-check"></i>
+                    </span>
+                    <input type="number" class="form-control" name="cron" placeholder=" Cron" required="required" min=2 max=5>
+                </div>
+            </div>     
+        <input type="hidden" id="value" name="value" value= {{id}}  >   
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="btn1">CREATE</button>
+        </div>
+		<p class="small text-center">By clicking the Sign Up button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
+	</form>
+	<div id="logout">
+		<form action="/form/logout/" method="POST">
+			{% csrf_token %}
+				<button  type="submit" class="btn btn-primary btn-block btn-lg" id="btn2">LOGOUT</button>
+		</form>
+		
+	</div>
+</div>
+</body>
+</html>                            
+
+
+
+
+
+
+
+
+
+<!-- <form action="done/" method="POST">
+            {% csrf_token %}
+            <label for="access">access</label>
+            <input id="access" type="text" name="access"></input>
+
+            <label for="status">status</label>
+            <input type="text" id="status" name="status"></input>
+
+            <label for="subscriber">subscriber</label>
+            <input id="subscriber" type="text" name="subscriber"></input>
+
+            <label for="url">url</label>
+            <input type="text" id="url" name="url"></input>
+
+            <label for="cron">cron</label>
+            <input type="text" id="cron" name="cron"></input>
+
+            <button type="submit" value="submit">submit</button>
+        </form>-->
